@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="pageTitleForm">Pré-Lançamento — LocalRank IA</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --neon-blue: #00e5ff;
+      --neon-green: #00ff9c;
+      --bg-dark: #05070f;
+      --card-bg: #0c1226;
+      --muted: #b8c1cc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #0b1025, #05070f);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    header img {
+      width: 160px;
+      filter: drop-shadow(0 0 18px rgba(0,229,255,0.8));
+    }
+
+    .container {
+      max-width: 620px;
+      margin: 40px auto 100px;
+      background: var(--card-bg);
+      border-radius: 22px;
+      padding: 45px 35px;
+      border: 1px solid rgba(0,229,255,0.35);
+      box-shadow: 0 0 35px rgba(0,229,255,0.15);
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      font-size: 2.2rem;
+      color: var(--neon-blue);
+      margin-bottom: 15px;
+      text-shadow: 0 0 15px rgba(0,229,255,0.7);
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 35px;
+      line-height: 1.6;
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--neon-green);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,229,255,0.3);
+      background: #05070f;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: 0.25s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--neon-green);
+      box-shadow: 0 0 15px rgba(0,255,156,0.4);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 25px;
+      background: linear-gradient(45deg, var(--neon-blue), var(--neon-green));
+      border: none;
+      padding: 18px;
+      border-radius: 35px;
+      font-weight: 900;
+      font-size: 1.05rem;
+      cursor: pointer;
+      color: #05070f;
+      text-transform: uppercase;
+      transition: 0.35s;
+      box-shadow: 0 0 25px rgba(0,229,255,0.6);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow:
+        0 0 35px rgba(0,255,156,0.7),
+        0 0 45px rgba(0,229,255,0.5);
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+    .hero-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo-glow {
+      max-width: 180px;
+      width: 100%;
+      filter:
+        drop-shadow(0 0 12px rgba(0, 255, 200, 0.6))
+        drop-shadow(0 0 28px rgba(0, 255, 200, 0.35));
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        filter:
+          drop-shadow(0 0 10px rgba(0, 255, 200, 0.4))
+          drop-shadow(0 0 24px rgba(0, 255, 200, 0.25));
+      }
+      50% {
+        filter:
+          drop-shadow(0 0 18px rgba(0, 255, 200, 0.8))
+          drop-shadow(0 0 40px rgba(0, 255, 200, 0.5));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero-header">
+    <img
+      src="logo.png"
+      alt="LocalRank IA"
+      class="logo-glow"
+    />
+  </header>
+  <div class="container">
+    <h1 data-i18n="formTitle">Responda às Questões</h1>
+    <p class="subtitle" data-i18n="formSubtitle">
+      Antes de entrar no grupo de pré-lançamento, responda este formulário rápido.
+      Isso ajuda-nos a adaptar melhor o LocalRank IA às suas necessidades.
+    </p>
+
+    <form id="prelaunchForm">
+      <div class="field">
+        <label data-i18n="labelCountry">País</label>
+        <select name="country" required>
+          <option value="" data-i18n="selectPlaceholder">Selecione</option>
+          <option data-i18n="countryAngola">Angola</option>
+          <option data-i18n="countryPortugal">Portugal</option>
+          <option data-i18n="countryMozambique">Moçambique</option>
+          <option data-i18n="countryBrazil">Brasil</option>
+          <option data-i18n="countryUK">Reino Unido</option>
+          <option data-i18n="countryUSA">Estados Unidos</option>
+          <option data-i18n="countryChile">Chile</option>
+          <option data-i18n="countryMexico">México</option>
+          <option data-i18n="countrySpain">Espanha</option>
+          <option data-i18n="countryArgentina">Argentina</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelPreferredLang">Idioma preferido</label>
+        <select name="language" required>
+          <option value="" data-i18n="selectPlaceholder">Selecione</option>
+          <option value="pt" data-i18n="langPT">Português</option>
+          <option value="en" data-i18n="langEN">English</option>
+          <option value="es" data-i18n="langES">Español</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelBusinessType">Tipo de negócio</label>
+        <input type="text" name="business_type" data-i18n-placeholder="placeholderBusinessType" placeholder="Ex: Restaurante, Clínica, Loja..." required>
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelBusinessSize">Tamanho do negócio</label>
+        <select name="size">
+          <option data-i18n="sizeSelfEmployed">Autônomo</option>
+          <option data-i18n="sizeSmall">Pequeno negócio</option>
+          <option data-i18n="sizeMedium">Médio negócio</option>
+          <option data-i18n="sizeAgency">Agência</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelChallenge">Maior desafio no Google / Marketing Local</label>
+        <textarea name="challenge" data-i18n-placeholder="placeholderChallenge" placeholder="Descreva em poucas palavras"></textarea>
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelGMB">Já utiliza o Google Meu Negócio?</label>
+        <select name="gmb">
+          <option data-i18n="gmbYes">Sim</option>
+          <option data-i18n="gmbNo">Não</option>
+          <option data-i18n="gmbHeardOf">Já ouvi falar</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelEmail">Email (opcional)</label>
+        <input type="email" name="email" data-i18n-placeholder="placeholderEmail" placeholder="Para novidades e acesso antecipado">
+      </div>
+
+      <button class="btn" type="submit" data-i18n="btnSubmitForm">
+        Entrar no Pré-Lançamento
+      </button>
+
+    </form>
+  </div>
+  <footer>
+    <span data-i18n="footerText">© 2025 LocalRank IA</span>
+  </footer>
+  <script src="js/i18n.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

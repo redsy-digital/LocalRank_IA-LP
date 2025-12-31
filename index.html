@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="pageTitleIndex">LocalRank IA — Pré-Lançamento</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --neon-blue: #00e5ff;
+      --neon-green: #00ff9c;
+      --neon-pink: #ff2fdc;
+      --bg-dark: #05070f;
+      --card-bg: #0c1226;
+      --text-muted: #b8c1cc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #0b1025, #05070f);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 30px;
+      border-bottom: 1px solid rgba(0,229,255,0.2);
+    }
+
+    .logo img {
+      width: 170px;
+      filter: drop-shadow(0 0 18px rgba(0,229,255,0.8));
+    }
+
+    .lang-switch {
+      background: transparent;
+      border: 1px solid var(--neon-blue);
+      color: var(--neon-blue);
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 110px 20px 90px;
+    }
+
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: var(--neon-blue);
+      text-shadow:
+        0 0 12px rgba(0,229,255,0.8),
+        0 0 40px rgba(0,255,156,0.4);
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: 0 auto 18px;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .hero strong {
+      color: var(--neon-green);
+    }
+
+    .hero-buttons {
+      margin-top: 45px;
+    }
+
+    .btn {
+      background: linear-gradient(45deg, var(--neon-blue), var(--neon-green));
+      border: none;
+      padding: 18px 42px;
+      border-radius: 35px;
+      font-weight: 900;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: #05070f;
+      text-transform: uppercase;
+      transition: all 0.35s ease;
+      box-shadow: 0 0 20px rgba(0,229,255,0.6);
+    }
+
+    .btn:hover {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow:
+        0 0 35px rgba(0,255,156,0.7),
+        0 0 55px rgba(0,229,255,0.5);
+    }
+
+    /* ===== SEÇÕES ===== */
+    section {
+      max-width: 1200px;
+      margin: 0 auto 110px;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.4rem;
+      color: var(--neon-blue);
+      margin-bottom: 50px;
+      text-shadow: 0 0 15px rgba(0,229,255,0.6);
+    }
+
+    /* ===== CARDS ===== */
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    @media (min-width: 800px) {
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 35px 28px;
+      border: 1px solid rgba(0,229,255,0.35);
+      box-shadow: 0 0 25px rgba(0,229,255,0.15);
+      transition: 0.35s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow:
+        0 0 35px rgba(0,255,156,0.7),
+        0 0 30px rgba(0,229,255,0.4);
+    }
+
+    .card h3 {
+      color: var(--neon-green);
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ===== OFERTA ===== */
+    .offer {
+      text-align: center;
+      background: linear-gradient(180deg, rgba(0,229,255,0.08), transparent);
+      padding: 80px 20px;
+      border-radius: 25px;
+      border: 1px solid rgba(255,47,220,0.3);
+    }
+
+    .offer h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.6rem;
+      color: var(--neon-pink);
+      text-shadow:
+        0 0 15px rgba(255,47,220,0.9),
+        0 0 40px rgba(255,47,220,0.6);
+      margin-bottom: 25px;
+    }
+
+    .offer ul {
+      list-style: none;
+      margin: 40px auto;
+      max-width: 700px;
+      text-align: left;
+    }
+
+    .offer li {
+      margin-bottom: 18px;
+      font-size: 1.1rem;
+    }
+
+    .spots {
+      margin-top: 25px;
+      color: var(--neon-green);
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid rgba(0,229,255,0.2);
+      color: #666;
+    }
+    .hero-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo-glow {
+      max-width: 180px;
+      width: 100%;
+      filter:
+        drop-shadow(0 0 12px rgba(0, 255, 200, 0.6))
+        drop-shadow(0 0 28px rgba(0, 255, 200, 0.35));
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        filter:
+          drop-shadow(0 0 10px rgba(0, 255, 200, 0.4))
+          drop-shadow(0 0 24px rgba(0, 255, 200, 0.25));
+      }
+      50% {
+        filter:
+          drop-shadow(0 0 18px rgba(0, 255, 200, 0.8))
+          drop-shadow(0 0 40px rgba(0, 255, 200, 0.5));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero-header">
+    <img
+      src="logo.png"
+      alt="LocalRank IA"
+      class="logo-glow"
+    />
+  </header>
+  <button class="lang-switch" data-i18n="langSwitch">PT</button>
+  <section class="hero">
+    <h1 data-i18n="heroTitle">Cansado de ver os seus concorrentes no topo do Google Maps?</h1>
+    <p data-i18n="heroSubtitle">
+      Chegou o <strong>piloto automático para o seu negócio local</strong>.
+      Otimize o seu Perfil de Empresa no Google, responda clientes e atraia mais visitas…
+      <strong>enquanto dorme.</strong>
+    </p>
+    <div class="hero-buttons">
+      <button class="btn" onclick="window.location.href='form.html'" data-i18n="btnMegaDiscount">
+        Garantir Mega Desconto
+      </button>
+    </div>
+  </section>
+  <section>
+    <h2 class="section-title" data-i18n="sectionTitleProblem">O Problema</h2>
+    <div class="cards">
+      <div class="card">
+        <h3 data-i18n="cardProblem1Title">Avaliações sem resposta?</h3>
+        <p data-i18n="cardProblem1Text">Cada review ignorado é um cliente perdido e um sinal negativo para o Google.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="cardProblem2Title">Perfil desatualizado?</h3>
+        <p data-i18n="cardProblem2Text">Um perfil inativo perde relevância e posições no ranking todos os dias.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="cardProblem3Title">Sem tempo para marketing?</h3>
+        <p data-i18n="cardProblem3Text">Você tem um negócio para gerir. Não para decifrar algoritmos.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2 class="section-title" data-i18n="sectionTitleSolution">A Solução</h2>
+    <div class="cards">
+      <div class="card">
+        <h3 data-i18n="cardSolution1Title">Respostas Inteligentes</h3>
+        <p data-i18n="cardSolution1Text">A IA analisa o sentimento de cada review e cria respostas profissionais.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="cardSolution2Title">Posts Semanais Automáticos</h3>
+        <p data-i18n="cardSolution2Text">Perfil sempre ativo com conteúdos relevantes gerados pela IA.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="cardSolution3Title">Relatórios Claros</h3>
+        <p data-i18n="cardSolution3Text">Veja crescimento real: mais chamadas, mais visitas, mais clientes.</p>
+      </div>
+    </div>
+  </section>
+  <section class="offer">
+    <h2 data-i18n="offerTitle">Mega Lançamento</h2>
+    <p data-i18n="offerSubtitle">
+      Seja um dos primeiros. <strong>Garanta um desconto que nunca mais se vai repetir.</strong>
+    </p>
+    <ul>
+      <li data-i18n="offerListItem1">📆 Período de <strong>7 dias</strong> de teste grátis</li>
+      <li data-i18n="offerListItem2">🚀 Mais de <strong>60% de desconto</strong> nos primeiros 3 meses</li>
+      <li data-i18n="offerListItem3">⚡ Acesso prioritário antes de todos</li>
+      <li data-i18n="offerListItem4">💬 Influência direta nas próximas funcionalidades</li>
+      <li data-i18n="offerListItem5">🎯 Apenas para os <strong>150 primeiros</strong></li>
+    </ul>
+    <div class="spots" data-i18n="spotsText">
+      Restam aproximadamente <strong>67%</strong> das vagas
+    </div>
+    <div style="margin-top:40px;">
+      <button class="btn" onclick="window.location.href='form.html'" data-i18n="btnMegaDiscount">
+        Garantir Mega Desconto
+      </button>
+    </div>
+  </section>
+  <footer>
+    <span data-i18n="footerText">© 2025 LocalRank IA — Todos os direitos reservados</span>
+  </footer>
+  <script src="js/i18n.js"></script>
+</body>
+</html>
